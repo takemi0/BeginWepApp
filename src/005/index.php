@@ -16,6 +16,15 @@ if( $trg_date === null ) {
 	$trg_date = strtotime( $trg_date );
 }
 
+$today = [
+	'y' => date('Y'),
+	'm' => date('m'),
+	'd' => date('d'),
+];
+$trg = [
+	'y' => date('Y', $trg_date ),
+	'm' => date('m', $trg_date ),
+];
 $begin = strtotime( date('Y-m-1', $trg_date) );
 $end = strtotime( date('Y-m-t', $trg_date) );
 $prev = strtotime( date('Y-m-1',$trg_date) );
@@ -47,6 +56,12 @@ foreach( $data as $l ) {
 			} elseif( $i == 6 ) {
 				$class = "cl_sun";
 			}
+		}
+		if( $trg['y'] == $today['y'] && 
+			$trg['m'] == $today['m'] &&
+				   $d == $today['d']
+		) { 
+			$class .= " cl_today";
 		}
 		$tmp.= "<td class='{$class}'>";
 		$tmp.= $d;

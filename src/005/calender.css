@@ -34,3 +34,7 @@ td.cl_sun {
 	background-color: #F0A0A0;
 	font-family: inpact;
 }
+
+.cl_today {
+	border : 1px solid red;
+}
