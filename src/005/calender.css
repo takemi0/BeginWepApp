@@ -8,6 +8,12 @@ th.cl_head{
 	width: 60px;
 }
 
+td.cl_none {
+	text-align:center;
+	background-color: white;
+	font-family: inpact;
+}
+
 td.cl_day {
 	text-align:center;
 	color: #207020;
