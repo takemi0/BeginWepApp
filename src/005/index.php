@@ -58,6 +58,7 @@ foreach( $data as $l ) {
 
 $tmp =  file_get_contents('index.tpl');
 
+$tmp = str_replace( '{$today}', date('Y-m-d'), $tmp );
 $tmp = str_replace( '{$prev}', getPrevMonth($trg_date), $tmp );
 $tmp = str_replace( '{$next}', getNextMonth($trg_date), $tmp );
 $tmp = str_replace( '{$year}', date('Y',$trg_date), $tmp );
