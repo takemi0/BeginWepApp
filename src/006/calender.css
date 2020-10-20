@@ -1,0 +1,30 @@
+table.calender {
+	width:450px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+th.cl_head{
+	width: 60px;
+}
+
+td.cl_day {
+	text-align:center;
+	color: #207020;
+	background-color: #B0F0B0;
+	font-family: inpact;
+}
+
+td.cl_sat {
+	text-align:center;
+	color: #BF7F3F;
+	background-color: #F0C0A0;
+	font-family: inpact;
+}
+
+td.cl_sun {
+	text-align:center;
+	color: #704040;
+	background-color: #F0A0A0;
+	font-family: inpact;
+}
