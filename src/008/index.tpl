@@ -28,12 +28,12 @@
 					<div class="calender">
 					<table class="calender">
 						<tr>
-							<th colspan="2" style="text-align: center;">&nbsp;</th>
+							<th colspan="2" style="text-align: center;"><a href="./?trg_date={$prev}">前月</a></th>
 							<th colspan="3" style="text-align: center;">
 								{$year}年 {$month}月<br/>
 								<a href="/?trg_date={$today}">今日</a>
 							</th>
-							<th colspan="2" style="text-align: center;">&nbsp;</th>
+							<th colspan="2" style="text-align: center;"><a href="./?trg_date={$next}">翌月</a></th>
 						</tr>
 						<tr>
 							<th class="cl_head">月</th>
