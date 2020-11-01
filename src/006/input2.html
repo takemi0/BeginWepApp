@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>サンプルアプリ：カレンダー</title>
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="calender.css">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/bootstrap_4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	 <!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+	<div class="flex-center position-ref full-height">
+		<div class="top-right links">
+			１から始めるWebアプリ #6
+		</div>
+		<div class="content">
+			<div class="m-d-md">
+				<ul>
+					<li> リンクによる変数 <br/><a href="/006/input.php?foo=bar">/006/input.php?foo=bar</a> <br/></li>
+					<li> フォームによる変数 <br/><form action="/006/input.php">foo:<input name="foo" /> <button>送信</button></form> <br/></li>
+					<li> フォームによる変数2 <br/>
+						<form action="/006/input.php">
+							date:<input name="date" type="date"/><br/>
+							ラジオボタン: 
+							<input name="radio" type="radio" value="A" id="radio_A"/><label for="radio_A">A</label>
+							<input name="radio" type="radio" value="B" id="radio_B"/><label for="radio_B">B</label><br/>
+							チェックボタン：
+							<input name="check[1]" type="checkbox" value="A" id="check_A"/><label for="check_A">A</label>
+							<input name="check[2]" type="checkbox" value="B" id="check_B"/><label for="check_B">B</label><br/>
+							<button>送信</button>
+						</form>
+					 </li>
+				</ul>
+			</div>
+		</div>
+  </body>
+</html>
