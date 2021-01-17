@@ -17,7 +17,7 @@
 		<div class="flex-center position-ref full-height">
 			<div class="top-right links">
 				カレンダーアプリ<br/>
-				Version: 1.0.0
+				Version: 1.0.1
 			</div>
 
 			<div class="content">
@@ -31,7 +31,7 @@
 							<th colspan="2" style="text-align: center;"><a href="./?trg_date={$prev}">前月</a></th>
 							<th colspan="3" style="text-align: center;">
 								{$year}年 {$month}月<br/>
-								<a href="/?trg_date={$today}">今日</a>
+								<a href="?trg_date={$today}">＜今日＞</a>
 							</th>
 							<th colspan="2" style="text-align: center;"><a href="./?trg_date={$next}">翌月</a></th>
 						</tr>

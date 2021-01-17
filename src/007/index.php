@@ -3,19 +3,19 @@
 //指定日時
 $trg_date = null;
 if( isset($_REQUEST['trg_date']) ) {
-	$trg_date = strtotime( $_REQUEST['trg_date'] );
+	$trg_date = strtotime( trim($_REQUEST['trg_date']) );
+	if( $trg_date === false ) {
+		$trg_date = time();
+	}
+} else {
+	$trg_date = time();
 }
 
 //月の日データ
 $data = [ 0 =>  ['', '','','','','',''] ];
 
-//データ作成
-if( $trg_date === null ) {
-	$trg_date = time();
-} else {
-	$trg_date = strtotime( $trg_date );
-}
 
+//データ作成
 $today = [
 	'y' => date('Y'),
 	'm' => date('m'),
