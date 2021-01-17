@@ -2,20 +2,20 @@
 
 //指定日時
 $trg_date = null;
-if( isset($_REQUEST['trg_date']) ) {
-	$trg_date = strtotime( trim($_REQUEST['trg_date']) );
-	if( $trg_date === false ) {
-		$trg_date = time();
-	}
-} else {
-	$trg_date = time();
+if( isset($_REQUEST['target_date']) ) {
+	$trg_date = strtotime( $_REQUEST['target_date'] );
 }
 
 //月の日データ
 $data = [ 0 =>  ['', '','','','','',''] ];
 
-
 //データ作成
+if( $trg_date === null ) {
+	$trg_date = time();
+} else {
+	$trg_date = strtotime( $trg_date );
+}
+
 $today = [
 	'y' => date('Y'),
 	'm' => date('m'),
@@ -73,9 +73,6 @@ foreach( $data as $l ) {
 
 $tmp =  file_get_contents('index.tpl');
 
-$tmp = str_replace( '{$today}', date('Y-m-d'), $tmp );
-$tmp = str_replace( '{$prev}', getPrevMonth($trg_date), $tmp );
-$tmp = str_replace( '{$next}', getNextMonth($trg_date), $tmp );
 $tmp = str_replace( '{$year}', date('Y',$trg_date), $tmp );
 $tmp = str_replace( '{$month}', date('m',$trg_date), $tmp );
 $tmp = str_replace( '{$week_date}', implode('',$rows), $tmp );
