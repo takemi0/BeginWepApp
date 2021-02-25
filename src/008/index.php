@@ -41,15 +41,16 @@ for( $d = $begin; $d <= $end; $d += 24 * 3600 ) {
 
 //祝日処理
 $holidays = [];
-$fp = fopen( 'holiday.csv', 'r' );
-while( $hdata = fgetcsv($fp) !== false ) {
+$fp = fopen( 'syukujitsu.csv', 'r' );
+fgetcsv($fp);	//ヘッダー読み飛ばし
+while( ($hdata = fgetcsv($fp) )!== false ) {
 	if( !$hdata ) continue;
 	$c_time = strtotime( $hdata[0] );
 	$c_year = date('Y', $c_time );
 	$c_month = date( 'm', $c_time );
 	$c_day = date( 'd', $c_time );
 	//処理月と異なる年付きの祝日データは読み飛ばし
-	if( !($trg['h'] == $c_year && $trg['m'] == $c_month) ) continue;
+	if( !($trg['y'] == $c_year && $trg['m'] == $c_month) ) continue;
 
 	$holidays[$c_day] = $hdata[1];
 }
@@ -83,7 +84,7 @@ foreach( $data as $l ) {
 		$tmp.= "<td class='{$class}'>";
 		$tmp.= $d;
 		if( !empty($holidays[$d]) ) {
-			$tmp.= '<br/>'.$holidays[$d];
+			$tmp.= '<br/><span>'.$holidays[$d].'</span>';
 		}
 		$tmp.= "</td>";
 	}

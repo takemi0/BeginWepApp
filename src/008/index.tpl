@@ -17,7 +17,7 @@
 		<div class="flex-center position-ref full-height">
 			<div class="top-right links">
 				カレンダーアプリ<br/>
-				Version: 1.0.1
+				Version: 1.0.2
 			</div>
 
 			<div class="content">

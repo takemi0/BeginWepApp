@@ -21,6 +21,14 @@ td.cl_day {
 	font-family: inpact;
 }
 
+td.cl_holiday {
+	color:#704040;
+}
+
+td.cl_holiday span {
+	font-size: 10px;
+}
+
 td.cl_sat {
 	text-align:center;
 	color: #BF7F3F;
