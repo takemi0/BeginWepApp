@@ -106,37 +106,3 @@ $tmp = str_replace( '{$week_date}', implode('',$rows), $tmp );
 
 echo $tmp;
 exit;
-
-/**
- * 前月の1日の日付文字列を取得
- *
- * @param [type] $prc_date
- * @return void
- */
-function getPrevMonth( $proc_date ) {
-	$year = date( 'Y', $proc_date );
-	$month= date( 'm', $proc_date );
-	$month --;
-	if( $month < 1 ) {
-		$year --;
-		$month = 12;
-	}
-	return "{$year}-{$month}-1";
-}
-
-/**
- * 翌月の1日の日付文字列を取得
- *
- * @param [type] $proc_date
- * @return void
- */
-function getNextMonth( $proc_date ) {
-	$year = date( 'Y', $proc_date );
-	$month= date( 'm', $proc_date );
-	$month ++;
-	if( $month > 12 ) {
-		$year ++;
-		$month = 1;
-	}
-	return "{$year}-{$month}-1";
-}
