@@ -6,12 +6,13 @@
 //処理日を取得する
 $trg_date = GetTargetDate();
 
-//データ作成
+//今日の日付
 $today = [
 	'y' => date('Y'),
 	'm' => date('m'),
 	'd' => date('d'),
 ];
+//処理対象年月
 $trg = [
 	'y' => date('Y', $trg_date ),
 	'm' => date('m', $trg_date ),
