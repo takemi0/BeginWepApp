@@ -175,7 +175,7 @@ function MakeView( $tpl, $trg_date, $rows  ) {
 /**
  * 前月の1日の日付文字列を取得
  *
- * @param [type] $prc_date
+ * @param int $prc_date
  * @return void
  */
 function getPrevMonth( $proc_date ) {
@@ -192,7 +192,7 @@ function getPrevMonth( $proc_date ) {
 /**
  * 翌月の1日の日付文字列を取得
  *
- * @param [type] $proc_date
+ * @param int $proc_date
  * @return void
  */
 function getNextMonth( $proc_date ) {

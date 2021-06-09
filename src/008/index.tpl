@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<title>サンプルアプリ：カレンダー</title>
-	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="calender.css">
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/calender.css">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/bootstrap_4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	 <!-- Fonts -->
