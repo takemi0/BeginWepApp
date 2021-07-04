@@ -58,3 +58,77 @@ function MakeCalendarData( $trg_date ){
 	}
 	return $data;
 }
+
+/**
+ * CSVより処理年月の祝日データを取得する
+ * @param array $trg
+ * @return array
+ */
+function GetHolidayData( $trg ){
+	$holidays = [];
+	$fp = fopen( 'syukujitsu.csv', 'r' );
+	if( $fp ) {
+		fgetcsv($fp);	//ヘッダー読み飛ばし
+		while( ($hdata = fgetcsv($fp) )!== false ) {
+			if( !$hdata ) continue;
+			$c_time = strtotime( $hdata[0] );
+			$c_year = date('Y', $c_time );
+			$c_month = date( 'm', $c_time );
+			$c_day = date( 'd', $c_time );
+			//処理月と異なる年付きの祝日データは読み飛ばし
+			if( !($trg['y'] == $c_year && $trg['m'] == $c_month) ) continue;
+
+			$holidays[$c_day] = $hdata[1];
+		}
+	}
+	return $holidays;
+}
+
+/**
+ * カレンダーのHTMLデータを生成する
+ *
+ * @param int $today
+ * @param array $data
+ * @param array $trg
+ * @param array $holidays
+ * @return array
+ */
+function MakeCalendarHtml( $today, $data, $trg, $holidays ){
+	$rows = [];
+	foreach( $data as $l ) {
+		$tmp = "<tr>";
+		foreach( $l as $i => $d ) {
+			$class = "cl_day";
+			if( !$d ) {
+				$class = "cl_none";
+			} else {
+				if( $i == 5 ) {
+					$class = "cl_sat";
+				} elseif( $i == 6 ) {
+					$class = "cl_sun";
+				}
+			}
+
+			if( $trg['y'] == $today['y'] && 
+				$trg['m'] == $today['m'] &&
+					$d == $today['d']
+			) { 
+				$class .= " cl_today";
+			}
+
+			if( !empty($holidays[$d]) ) {
+				$class .= " cl_holiday";
+			}
+
+			$tmp.= "<td class='{$class}'>";
+			$tmp.= $d;
+			if( !empty($holidays[$d]) ) {
+				$tmp.= '<br/><span>'.$holidays[$d].'</span>';
+			}
+			$tmp.= "</td>";
+		}
+		$tmp.= "</tr>";
+		$rows[] = $tmp;
+	}
+	return $rows;
+}
